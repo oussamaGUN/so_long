@@ -87,5 +87,6 @@ int check_up(t_game ***game);
 int	ft_len(int n);
 char *ft_itoa(int n);
 size_t	ft_strlen_for_printing_moves(const char *str);
+int ft_coins(t_game **game);
 
 #endif

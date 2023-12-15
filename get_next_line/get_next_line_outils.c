@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 
 size_t	ft_strlen(char *str)
 {

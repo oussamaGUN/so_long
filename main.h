@@ -37,6 +37,17 @@ typedef struct	s_game {
 	int coins;
 	char g;
 }				t_game;
+typedef struct	s_data {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	
+			t_data;
+typedef struct s_collect {
+	int collect;
+} t_coll;
 #include <mlx.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -88,5 +99,6 @@ int	ft_len(int n);
 char *ft_itoa(int n);
 size_t	ft_strlen_for_printing_moves(const char *str);
 int ft_coins(t_game **game);
+void get_line(t_game *game, char *s);
 
 #endif

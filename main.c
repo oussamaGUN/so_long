@@ -349,69 +349,7 @@ int ft_strlen_x(char *s)
 		i++;
 	return i;
 }
-void render_wall(t_game **game)
-{
-	(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/wall1.xpm", &(*game)->img_width, &(*game)->img_height);
-    mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->x, (*game)->y);
-}
-void render_ground(t_game **game)
-{
-	(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/ground1.xpm", &(*game)->img_width, &(*game)->img_height);
-    mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->x, (*game)->y);
-}
-void render_monster(t_game **game)
-{
-	(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/ground1.xpm", &(*game)->img_width, &(*game)->img_height);
-    mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->x, (*game)->y);
-	(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/monster.xpm", &(*game)->img_width, &(*game)->img_height);
-    mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->x, (*game)->y);
-}
-void render_door(t_game **game)
-{
-	(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/ground1.xpm", &(*game)->img_width, &(*game)->img_height);
-    mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->x, (*game)->y);
-	(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/closed_door.xpm", &(*game)->img_width, &(*game)->img_height);
-    mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->x, (*game)->y);
-}
-void render_player(t_game **game)
-{
-	(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/ground1.xpm", &(*game)->img_width, &(*game)->img_height);
-    mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->x, (*game)->y);
-	(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/worrior.xpm", &(*game)->img_width, &(*game)->img_height);
-    mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->x, (*game)->y);
-	(*game)->pos_x = (*game)->x;
-	(*game)->pos_y = (*game)->y;
-	(*game)->g = 'P';
-}
 
-void map(t_game *game)
-{
-	int i = 0;
-	int j = 0;
-
-	while (j < game->k)
-	{
-		i = 0;
-		while (game->arr[j][i])
-		{
-			if (game->arr[j][i] == '1')
-				render_wall(&game);
-			else if (game->arr[j][i] == '0')
-				render_ground(&game);
-			else if (game->arr[j][i] == 'M')
-				render_monster(&game);
-			else if (game->arr[j][i] == 'E')
-				render_door(&game);
-			else if (game->arr[j][i] == 'P')
-				render_player(&game);
-			game->x += 65;
-			i++;
-		}
-		game->x = 0;
-		game->y += 65;
-		j++;
-    }
-}
 
 int strfind(char *arr)
 {

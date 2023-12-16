@@ -6,4 +6,4 @@ SRC		=	main.c  get_next_line/get_next_line.c get_next_line/get_next_line_outils.
 
 
 main: main.c
-	$(CC)  $(SRC) -lmlx -framework OpenGL -framework AppKit -Wall -Wextra -Werror
+	$(CC)  $(SRC) -lmlx -framework OpenGL -framework AppKit -Wall -Wextra -Werror -D BUFFER_SIZE=1

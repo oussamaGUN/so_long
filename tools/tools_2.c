@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tools_2.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/16 13:18:38 by ousabbar          #+#    #+#             */
+/*   Updated: 2023/12/16 16:11:38 by ousabbar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../main.h"
+
 size_t	ft_strlen_for_printing_moves(const char *str)
 {
 	size_t	i;
@@ -8,6 +21,7 @@ size_t	ft_strlen_for_printing_moves(const char *str)
 		i++;
 	return (i);
 }
+
 char	*ft_strdup(const char *s)
 {
 	char		*dst;
@@ -27,6 +41,13 @@ char	*ft_strdup(const char *s)
 	dst[i] = '\0';
 	return (dst);
 }
+
+void	won(void)
+{
+	write(1, "YOU WON\n", 8);
+	exit(0);
+}
+
 int	ft_len(int n)
 {
 	int	i;
@@ -44,7 +65,8 @@ int	ft_len(int n)
 	}
 	return (i);
 }
-char *ft_itoa(int n)
+
+char	*ft_itoa(int n)
 {
 	int		len;
 	char	*s;
@@ -70,5 +92,5 @@ char *ft_itoa(int n)
 		n /= 10;
 		len--;
 	}
-	return s;
+	return (s);
 }

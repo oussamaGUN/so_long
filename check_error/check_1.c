@@ -6,11 +6,24 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:03:59 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 11:14:35 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 16:46:59 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../main.h"
+
+void	protect(void)
+{
+	write(1, "Error\n", 6);
+	exit(0);
+}
+
+void	protect1(void *mlx, void *img)
+{
+	write(1, "Error\n", 6);
+	mlx_destroy_image(mlx, img);
+	exit(0);
+}
 
 void	valid_name(char *s)
 {
@@ -24,10 +37,7 @@ void	valid_name(char *s)
 	while (len >= 0)
 	{
 		if (s[i] != ber[len])
-		{
-			printf("Error");
-			exit(0);
-		}
+			protect();
 		len--;
 		i--;
 	}

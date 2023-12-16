@@ -52,6 +52,14 @@ void to_left(t_game **game)
 		mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->pos_x, (*game)->pos_y);
 	}
 }
+
+int quit(t_game *game)
+{
+	(void)game;
+	exit(0);
+	return (0);
+}
+
 int	key_hook(int keycode, t_game *game)
 {
 	if (keycode == ESC)

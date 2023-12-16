@@ -6,15 +6,15 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 12:12:06 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 12:22:16 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 12:58:14 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../main.h"
 
-void collect(t_game ***game, int i, int j, void *img)
+void	collect(t_game ***game, int i, int j, void *img)
 {
-	void*	g;
+	void	*g;
 
 	g = mlx_xpm_file_to_image((**game)->mlx,
 			"./img/ground1.xpm", &(**game)->img_width,
@@ -49,17 +49,27 @@ void	render_animation(t_game **game, void *img)
 		}
 	}
 }
-int animation(t_game *game)
-{
-	static int frame = 0;
-	void *imgf = NULL;
 
-	
+int	animation(t_game *game)
+{
+	static int	frame;
+	void 		*imgf;
+
+	imgf = NULL;
+	frame = 0;
 	if (frame < 20)
-		imgf = mlx_xpm_file_to_image(game->mlx, "./img/coin1.xpm", &game->img_width, &game->img_height);
+	{
+		imgf = mlx_xpm_file_to_image(game->mlx,
+				"./img/coin1.xpm", &game->img_width, &game->img_height);
+		if (!imgf)
+			protect();
+	}
 	else if (frame < 40)
 	{
-		imgf = mlx_xpm_file_to_image(game->mlx, "./img/png9.xpm", &game->img_width, &game->img_height);
+		imgf = mlx_xpm_file_to_image(game->mlx,
+				"./img/png9.xpm", &game->img_width, &game->img_height);
+		if (!imgf)
+			protect();
 		if (frame + 2 == 40)
 			frame = 0;
 	}

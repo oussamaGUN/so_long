@@ -6,13 +6,13 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:22:44 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 11:26:58 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 11:30:59 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../main.h"
 
-void if_else(char c, t_game **game)
+void	if_else(char c, t_game **game)
 {
 	if (c == '1')
 		render_wall(&game);
@@ -25,10 +25,11 @@ void if_else(char c, t_game **game)
 	else if (c == 'P')
 		render_player(&game);
 }
+
 void	map(t_game *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = -1;
 	i = 0;

@@ -101,5 +101,7 @@ char *ft_itoa(int n);
 size_t	ft_strlen_for_printing_moves(const char *str);
 int ft_coins(t_game **game);
 void get_line(t_game *game, char *s);
+void	protect(void);
+void collect(t_game ***game, int i, int j, void *img);
 
 #endif

@@ -1,28 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   animation.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/16 12:12:06 by ousabbar          #+#    #+#             */
+/*   Updated: 2023/12/16 12:22:16 by ousabbar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../main.h"
-void render_animation(t_game **game, void *img)
+
+void collect(t_game ***game, int i, int j, void *img)
 {
-	int j = 0;
-	int i = 0;
-	void *g;
-	while (i < (*game)->k)
+	void*	g;
+
+	g = mlx_xpm_file_to_image((**game)->mlx,
+			"./img/ground1.xpm", &(**game)->img_width,
+			&(**game)->img_height);
+	if (!g)
+		protect();
+	if (!mlx_put_image_to_window((**game)->mlx,
+			(**game)->win, g, j * 65, i * 65))
+		protect();
+	if (!mlx_put_image_to_window((**game)->mlx,
+			(**game)->win, img, j * 65, i * 65))
+		protect();
+}
+
+void	render_animation(t_game **game, void *img)
+{
+	int		i;
+	int		j;
+
+	j = 0;
+	i = -1;
+	while (++i < (*game)->k)
 	{
 		j = 0;
 		while ((*game)->arr[i][j])
 		{
 			if ((*game)->arr[i][j] == 'C')
 			{
-				g = mlx_xpm_file_to_image((*game)->mlx, "./img/ground1.xpm", &(*game)->img_width, &(*game)->img_height);
-				mlx_put_image_to_window((*game)->mlx, (*game)->win, g, j * 65,i * 65);
-				mlx_put_image_to_window((*game)->mlx, (*game)->win, img, j * 65,i * 65);			
+				collect(&game, i, j, img);
 			}
 			j++;
 		}
-		i++;
 	}
 }
 int animation(t_game *game)
 {
-    static int frame = 0;
+	static int frame = 0;
 	void *imgf = NULL;
 
 	
@@ -36,5 +65,5 @@ int animation(t_game *game)
 	}
 	render_animation(&game, imgf);
 	frame += 1;
-    return 0;
+	return 0;
 }

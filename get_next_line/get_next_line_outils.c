@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_outils.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/16 19:56:42 by ousabbar          #+#    #+#             */
+/*   Updated: 2023/12/16 19:56:52 by ousabbar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../main.h"
 
 size_t	ft_strlen(char *str)
@@ -53,4 +65,11 @@ char	*ft_strjoin(char *s, char *buff)
 	str[ft_strlen(s) + ft_strlen(buff)] = '\0';
 	free(s);
 	return (str);
+}
+
+int	quit(t_game *game)
+{
+	(void)game;
+	exit(0);
+	return (0);
 }

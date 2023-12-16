@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:20:15 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 16:50:10 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:54:51 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	player_check_col(t_game ****game)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (i < (***game)->k)
@@ -73,19 +73,19 @@ void	render_text_on_the_window(t_game ****game)
 			&(***game)->img_height);
 	if (!(***game)->img)
 		protect();
-	if (!mlx_put_image_to_window((***game)->mlx, 
+	if (!mlx_put_image_to_window((***game)->mlx,
 			(***game)->win, (***game)->img, 0, 0))
 		protect1((***game)->img, (***game)->img);
-	if (!mlx_put_image_to_window((***game)->mlx, 
+	if (!mlx_put_image_to_window((***game)->mlx,
 			(***game)->win, (***game)->img, 65, 0))
 		protect1((***game)->img, (***game)->img);
-	if (!mlx_put_image_to_window((***game)->mlx, 
+	if (!mlx_put_image_to_window((***game)->mlx,
 			(***game)->win, (***game)->img, 130, 0))
 		protect1((***game)->img, (***game)->img);
-	if (!mlx_put_image_to_window((***game)->mlx, 
+	if (!mlx_put_image_to_window((***game)->mlx,
 			(***game)->win, (***game)->img, 194, 0))
 		protect1((***game)->img, (***game)->img);
-	if (mlx_string_put((***game)->mlx, 
+	if (mlx_string_put((***game)->mlx,
 			(***game)->win, 0, 0, 0x00FF0000, "move"))
 		protect1((***game)->img, (***game)->img);
 	fun((***game)->mlx, (***game)->win, s);

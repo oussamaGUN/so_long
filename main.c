@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 18:27:20 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 18:10:21 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:55:50 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ void	images(t_game *game)
 			&game->img_width, &game->img_height);
 	if (!game->worrior)
 		protect();
-	game->ground = mlx_xpm_file_to_image(game->mlx, "./img/ground.xpm",
+	game->ground = mlx_xpm_file_to_image(game->mlx, "./img/ground1.xpm",
 			&game->img_width, &game->img_height);
 	if (!game->worrior)
 		protect();
 }
+
 int	main(int ac, char *av[])
 {
 	t_game	game;

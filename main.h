@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:29:56 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 18:08:38 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:57:55 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # define DOWN 125
 # define RIGHT 124
 # define ESC 53
-
 
 # include <mlx.h>
 # include <stdlib.h>
@@ -65,7 +64,7 @@ typedef struct s_data {
 }				t_data;
 
 char	*get_next_line(int fd);
-int quit(t_game *game);
+int		quit(t_game *game);
 char	*ft_strchr(char *s, char c);
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(char *s);
@@ -73,10 +72,10 @@ char	*ft_strdup(const char *s);
 void	valid_name(char *s);
 int		ft_strlen_x(char *s);
 int		first_c(char **arr, int k);
-int		second_c(char **arr,int k);
+int		second_c(char **arr, int k);
 int		third_c(t_game **game);
 void	positions_check(t_game ***game);
-int		third_c_case(int a, int b, int c,int d);
+int		third_c_case(int a, int b, int c, int d);
 int		map_check(t_game *game);
 int		strfind(char *arr);
 void	map(t_game *game);
@@ -86,7 +85,7 @@ void	render_monster(t_game ***game);
 void	render_door(t_game ***game);
 void	render_player(t_game ***game);
 void	if_else(char c, t_game **game);
-char	**ft_split(char  **s, int k);
+char	**ft_split(char **s, int k);
 int		flood_fill(t_game *game);
 int		animation(t_game *game);
 void	render_animation(t_game **game, void *img);

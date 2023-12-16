@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 12:12:06 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 12:58:14 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 12:59:05 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	render_animation(t_game **game, void *img)
 int	animation(t_game *game)
 {
 	static int	frame;
-	void 		*imgf;
+	void		*imgf;
 
 	imgf = NULL;
 	frame = 0;
@@ -75,5 +75,5 @@ int	animation(t_game *game)
 	}
 	render_animation(&game, imgf);
 	frame += 1;
-	return 0;
+	return (0);
 }

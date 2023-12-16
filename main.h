@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:29:56 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 16:47:22 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 18:08:38 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct s_game {
 	int		count_exit;
 	int		garbage;
 	int		count_worrior;
+	void	*worrior;
+	void	*ground;
 	int		count_wall;
 	int		count_char;
 	int		coin_count;

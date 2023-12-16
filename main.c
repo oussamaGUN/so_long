@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 18:27:20 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 16:51:52 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 18:10:21 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,17 @@ void	init(t_game *game)
 		protect();
 }
 
+void	images(t_game *game)
+{
+	game->worrior = mlx_xpm_file_to_image(game->mlx, "./img/worrior.xpm",
+			&game->img_width, &game->img_height);
+	if (!game->worrior)
+		protect();
+	game->ground = mlx_xpm_file_to_image(game->mlx, "./img/ground.xpm",
+			&game->img_width, &game->img_height);
+	if (!game->worrior)
+		protect();
+}
 int	main(int ac, char *av[])
 {
 	t_game	game;
@@ -40,6 +51,7 @@ int	main(int ac, char *av[])
 		write(1, "Error\n", 6);
 		exit(0);
 	}
+	images(&game);
 	mlx_loop_hook(game.mlx, animation, &game);
 	mlx_hook(game.win, 02, 0, key_hook, &game);
 	mlx_hook(game.win, 17, 0, quit, &game);

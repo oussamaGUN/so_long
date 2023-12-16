@@ -1,28 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_hook.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/16 17:17:55 by ousabbar          #+#    #+#             */
+/*   Updated: 2023/12/16 17:57:33 by ousabbar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "../main.h"
-void to_down(t_game **game)
+
+void	to_down(t_game **game)
 {
 	if (check_down(&game) == 1)
 	{
-		(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/ground1.xpm", &(*game)->img_width, &(*game)->img_height);
-		mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->pos_x, (*game)->pos_y);
+		(*game)->img = mlx_xpm_file_to_image((*game)->mlx,
+			"./img/ground1.xpm", &(*game)->img_width, &(*game)->img_height);
+		if (!mlx_put_image_to_window((*game)->mlx, (*game)->win,
+				(*game)->img, (*game)->pos_x, (*game)->pos_y))
+			protect1((*game)->mlx, (*game)->img);
 		(*game)->arr[(*game)->pos_y / 65][(*game)->pos_x / 65] = '0';
 		(*game)->pos_y += 65;
 		(*game)->arr[(*game)->pos_y / 65][(*game)->pos_x / 65] = 'P';
-		(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/worrior.xpm", &(*game)->img_width, &(*game)->img_height);
-		mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->pos_x, (*game)->pos_y);
+		if (!mlx_put_image_to_window((*game)->mlx, (*game)->win,
+				(*game)->worrior, (*game)->pos_x, (*game)->pos_y))
+			protect1((*game)->mlx, (*game)->img);
 	}
 }
-void to_up(t_game **game)
+
+void	to_up(t_game **game)
 {
 	if (check_up(&game) == 1)
 	{
 		(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/ground1.xpm", &(*game)->img_width, &(*game)->img_height);
-		mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->pos_x, (*game)->pos_y);
+		if (!mlx_put_image_to_window((*game)->mlx, (*game)->win,
+				(*game)->img, (*game)->pos_x, (*game)->pos_y))
+			protect1((*game)->mlx, (*game)->img);
 		(*game)->arr[(*game)->pos_y / 65][(*game)->pos_x / 65] = '0';
 		(*game)->pos_y -= 65;
 		(*game)->arr[(*game)->pos_y / 65][(*game)->pos_x / 65] = 'P';
-		(*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/worrior.xpm", &(*game)->img_width, &(*game)->img_height);
-		mlx_put_image_to_window((*game)->mlx, (*game)->win, (*game)->img,(*game)->pos_x, (*game)->pos_y);
+		// (*game)->img = mlx_xpm_file_to_image((*game)->mlx, "./img/worrior.xpm", &(*game)->img_width, &(*game)->img_height);
+		if (!mlx_put_image_to_window((*game)->mlx, (*game)->win,
+				(*game)->worrior, (*game)->pos_x, (*game)->pos_y))
+			protect1((*game)->mlx, (*game)->img);
 	}
 }
 void to_right(t_game **game)

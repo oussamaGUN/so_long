@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 12:12:06 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 12:59:05 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/16 13:12:24 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,10 @@ void	render_animation(t_game **game, void *img)
 
 int	animation(t_game *game)
 {
-	static int	frame;
 	void		*imgf;
+	static int	frame = 0;
 
 	imgf = NULL;
-	frame = 0;
 	if (frame < 20)
 	{
 		imgf = mlx_xpm_file_to_image(game->mlx,

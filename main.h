@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:29:56 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 19:57:55 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:28:43 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include <string.h>
 # include <limits.h>
 # include <unistd.h>
 # include <math.h>
@@ -31,6 +30,8 @@
 typedef struct s_game {
 	int		coin_x;
 	int		coint_y;
+	int		door_y;
+	int		door_x;
 	int		count_exit;
 	int		garbage;
 	int		count_worrior;
@@ -112,5 +113,6 @@ void	protect(void);
 void	collect(t_game ***game, int i, int j, void *img);
 void	protect(void);
 void	protect1(void *mlx, void *img);
-
+int		ft_strncmp(char *s1, char *s2, unsigned int n);
+int		flood_fill_3(t_game *game);
 #endif

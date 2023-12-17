@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 18:27:20 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 19:55:50 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:17:56 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ void	init(t_game *game)
 	game->win = mlx_new_window(game->mlx, ft_strlen_x(game->arr[0]) * 65,
 			game->k * 65, "so long");
 	if (!game->win)
-		protect();
+	{
+		write(1, "Error\n", 6);
+		mlx_destroy_window(game->mlx, game->win);
+		exit(0);
+	}
 }
 
 void	images(t_game *game)
@@ -47,11 +51,13 @@ int	main(int ac, char *av[])
 		protect();
 	init(&game);
 	map(&game);
-	if (flood_fill(&game) == 0)
+	if (game.k == 3)
 	{
-		write(1, "Error\n", 6);
-		exit(0);
+		if (flood_fill_3(&game) == 0)
+			protect();
 	}
+	if (flood_fill(&game) == 0)
+		protect();
 	images(&game);
 	mlx_loop_hook(game.mlx, animation, &game);
 	mlx_hook(game.win, 02, 0, key_hook, &game);

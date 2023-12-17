@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:08:43 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 11:14:02 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:22:33 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ int	second_c(char **arr, int k)
 {
 	int	i;
 
-	if (strncmp(arr[0], arr[k - 1], ft_strlen_x(arr[0])) != 0)
+	if (ft_strncmp(arr[0], arr[k - 1], ft_strlen_x(arr[0])) != 0)
 		return (0);
 	if (strfind(arr[0]) == 0 && strfind(arr[k - 1]) == 0)
 		return (0);
-	i = 1;
+	i = 0;
 	while (i < k - 1)
 	{
 		if (arr[i][0] != arr[i][ft_strlen_x(arr[i]) - 1]
-			&& arr[i][ft_strlen_x(arr[i]) - 1] != '1')
+			|| arr[i][0] != '1' || arr[i][ft_strlen_x(arr[i]) - 1] != '1')
 			return (0);
 		i++;
 	}

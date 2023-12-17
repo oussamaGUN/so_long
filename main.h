@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:29:56 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/17 16:16:48 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:13:05 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_game {
 	void	*player_left;
 	void	*player_down;
 	void	*player_up;
+	void	*door;
 	void	*ground;
 	int		count_wall;
 	int		count_char;

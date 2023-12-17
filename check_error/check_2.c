@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:08:43 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/17 14:35:54 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:19:03 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	first_c(char **arr, int k)
 	len = ft_strlen_x(arr[0]);
 	if (!len)
 		return (0);
-	while (i < k - 1)
+	while (i <= k - 1)
 	{
 		if (ft_strlen_x(arr[i]) != len)
 			return (0);

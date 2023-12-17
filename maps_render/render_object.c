@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:31:07 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/17 15:38:53 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:14:09 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void	render_player(t_game ***game)
 			(**game)->img, (**game)->x, (**game)->y))
 		protect1((**game)->img, (**game)->img);
 	(**game)->img = mlx_xpm_file_to_image((**game)->mlx,
-			"./img/player_right.xpm", &(**game)->img_width, &(**game)->img_height);
+			"./img/player_right.xpm", &(**game)->img_width,
+			&(**game)->img_height);
 	if (!(**game)->img)
 		protect();
 	if (!mlx_put_image_to_window((**game)->mlx, (**game)->win,

@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:08:43 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/17 14:22:33 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:35:54 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,9 @@ int	third_c_case(int a, int b, int c, int d)
 		return (0);
 	if (b != 1)
 		return (0);
-	if (d != 1)
-		return (0);
 	if (c < 1)
+		return (0);
+	if (d != 1)
 		return (0);
 	return (1);
 }

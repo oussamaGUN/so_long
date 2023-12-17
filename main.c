@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 18:27:20 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/17 14:17:56 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:17:08 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,25 @@ void	init(t_game *game)
 
 void	images(t_game *game)
 {
-	game->worrior = mlx_xpm_file_to_image(game->mlx, "./img/worrior.xpm",
+	game->player_right = mlx_xpm_file_to_image(game->mlx, "./img/player_right.xpm",
 			&game->img_width, &game->img_height);
-	if (!game->worrior)
+	if (!game->player_right)
+		protect();
+	game->player_left = mlx_xpm_file_to_image(game->mlx, "./img/player_left.xpm",
+			&game->img_width, &game->img_height);
+	if (!game->player_right)
+		protect();
+	game->player_down = mlx_xpm_file_to_image(game->mlx, "./img/player_down.xpm",
+			&game->img_width, &game->img_height);
+	if (!game->player_down)
+		protect();
+	game->player_up = mlx_xpm_file_to_image(game->mlx, "./img/player_up.xpm",
+			&game->img_width, &game->img_height);
+	if (!game->player_up)
 		protect();
 	game->ground = mlx_xpm_file_to_image(game->mlx, "./img/ground1.xpm",
 			&game->img_width, &game->img_height);
-	if (!game->worrior)
+	if (!game->ground)
 		protect();
 }
 

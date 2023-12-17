@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 12:12:06 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 21:44:41 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:58:47 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	animation(t_game *game)
 				"./img/png9.xpm", &game->img_width, &game->img_height);
 		if (!imgf)
 			protect();
-		if (frame + 2 == 40)
+		if (frame + 1 == 40)
 			frame = 0;
 	}
 	render_animation(&game, imgf);

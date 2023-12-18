@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 18:27:20 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/18 09:15:02 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/18 17:03:48 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ int	main(int ac, char *av[])
 	if (flood_fill(&game) == 0)
 		protect();
 	images(&game);
-	system("leaks so_long");
 	mlx_loop_hook(game.mlx, animation, &game);
 	mlx_hook(game.win, 02, 0, key_hook, &game);
 	mlx_hook(game.win, 17, 0, quit, &game);

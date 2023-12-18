@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 18:27:20 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/17 18:13:28 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:15:02 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	images(t_game *game)
 	game->player_left = mlx_xpm_file_to_image(game->mlx,
 			"./img/player_left.xpm",
 			&game->img_width, &game->img_height);
-	if (!game->player_right)
+	if (!game->player_left)
 		protect();
 	game->player_down = mlx_xpm_file_to_image(game->mlx,
 			"./img/player_down.xpm",
@@ -68,14 +68,12 @@ int	main(int ac, char *av[])
 		protect();
 	init(&game);
 	map(&game);
-	if (game.k == 3)
-	{
-		if (flood_fill_3(&game) == 0)
-			protect();
-	}
+	if (flood_fill_3(&game) == 0)
+		protect();
 	if (flood_fill(&game) == 0)
 		protect();
 	images(&game);
+	system("leaks so_long");
 	mlx_loop_hook(game.mlx, animation, &game);
 	mlx_hook(game.win, 02, 0, key_hook, &game);
 	mlx_hook(game.win, 17, 0, quit, &game);

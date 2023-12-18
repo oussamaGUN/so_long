@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:14:54 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/17 14:24:27 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:05:15 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	flood_fill_3(t_game *game)
 	char	**new;
 	int		i;
 	int		j;
+	int		h;
 
 	i = 0;
 	j = 0;
@@ -45,5 +46,9 @@ int	flood_fill_3(t_game *game)
 		}
 		i++;
 	}
+	h = 0;
+	while (h < game->k)
+		free(new[h++]);
+	free(new);
 	return (1);
 }

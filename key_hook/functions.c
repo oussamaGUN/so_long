@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:20:15 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/16 21:44:31 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:26:29 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	lost(void)
 
 void	fun(void *a, void *b, char *s)
 {
-	mlx_string_put(a, b, 50, 0, 0x00FF0000, s);
+	mlx_string_put(a, b, 50, 0, 0x00CCFF00, s);
 }
 
 void	render_text_on_the_window(t_game ****game)
@@ -86,7 +86,7 @@ void	render_text_on_the_window(t_game ****game)
 			(***game)->win, (***game)->img, 194, 0))
 		protect1((***game)->img, (***game)->img);
 	if (mlx_string_put((***game)->mlx,
-			(***game)->win, 0, 0, 0x00FF0000, "move"))
+			(***game)->win, 0, 0, 0x00000000, "move"))
 		protect1((***game)->img, (***game)->img);
 	fun((***game)->mlx, (***game)->win, s);
 }

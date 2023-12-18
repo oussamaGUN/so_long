@@ -14,7 +14,7 @@ $(NAME): $(OBJC)
 	gcc $(OBJC) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 %.o: %.c
-	gcc -c $< -o $@ -Wall -Wextra -Werror -D BUFFER_SIZE=1
+	gcc -c $< -o $@   -D BUFFER_SIZE=1
 
 clean:
 	rm -rf $(OBJC)

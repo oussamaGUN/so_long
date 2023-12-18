@@ -6,7 +6,7 @@
 /*   By: ousabbar <ousabbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 17:17:55 by ousabbar          #+#    #+#             */
-/*   Updated: 2023/12/17 18:13:55 by ousabbar         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:16:40 by ousabbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	to_down(t_game **game)
 		(*game)->arr[(*game)->pos_y / 65][(*game)->pos_x / 65] = 'P';
 		if (!mlx_put_image_to_window((*game)->mlx, (*game)->win,
 				(*game)->player_down, (*game)->pos_x, (*game)->pos_y))
-			protect1((*game)->mlx, (*game)->player_right);
+			protect1((*game)->mlx, (*game)->player_down);
 	}
 }
 
@@ -40,7 +40,7 @@ void	to_up(t_game **game)
 		(*game)->arr[(*game)->pos_y / 65][(*game)->pos_x / 65] = 'P';
 		if (!mlx_put_image_to_window((*game)->mlx, (*game)->win,
 				(*game)->player_up, (*game)->pos_x, (*game)->pos_y))
-			protect1((*game)->mlx, (*game)->player_right);
+			protect1((*game)->mlx, (*game)->player_up);
 	}
 }
 
@@ -73,7 +73,7 @@ void	to_left(t_game **game)
 		if (!mlx_put_image_to_window((*game)->mlx,
 				(*game)->win, (*game)->player_left,
 				(*game)->pos_x, (*game)->pos_y))
-			protect1((*game)->mlx, (*game)->player_right);
+			protect1((*game)->mlx, (*game)->player_left);
 	}
 }
 
